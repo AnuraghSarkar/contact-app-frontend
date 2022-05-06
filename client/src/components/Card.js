@@ -1,18 +1,37 @@
-import Avatar from "../static/avatar.jpg";
 import Button from "./Button";
 import styled from "styled-components";
+import { useEffect, useState } from "react";
+import baseUrl from "../baseUrl";
+import axios from "axios";
 
 const Card = () => {
+  const [contact, setContact] = useState({ profiles: [] });
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(`${baseUrl}/contact`);
+
+      setContact(result.data);
+    };
+
+    fetchData();
+  }, []);
   return (
     <>
       <Container>
         <Title>CONTACT INFORMATION</Title>
         <Line> </Line>
-        <AvatarImg src={Avatar} alt="profile" />
-        <Info>
-          <Username>Johnny Deep</Username>
-          <Contact>+9779915445156</Contact>
-        </Info>
+        <ul>
+          {contact.profiles.map((item) => (
+            <li key={item.objectID}>
+              <AvatarImg src={item.image} alt="profile" />
+              <Info>
+                <Username>{item.name}</Username>
+                <Contact>{item.phoneNumber}</Contact>
+              </Info>
+            </li>
+          ))}
+        </ul>
+
         <Button />
       </Container>
     </>
