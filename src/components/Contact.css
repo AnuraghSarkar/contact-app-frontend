@@ -148,3 +148,18 @@ input{
 
 
 
+@media screen  and (max-width:500px){
+  .form-inner{
+    width: 350px;
+  margin: 0 auto;
+  }
+  .field input{
+    width: 250px;
+  }
+  .image_outer{
+    width: 250px;
+  }
+  .underline{
+    width: 250px;
+  }
+}
