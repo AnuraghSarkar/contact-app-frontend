@@ -7,6 +7,7 @@ const Card = () => {
     <>
       <Container>
         <Title>CONTACT INFORMATION</Title>
+        <Line> </Line>
         <AvatarImg src={Avatar} alt="profile" />
         <Info>
           <Username>Johnny Deep</Username>
@@ -19,12 +20,12 @@ const Card = () => {
 };
 
 const Container = styled.div`
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 40px;
-  position: relative;
   width: 400px;
   height: 453px;
   background: #ffffff;
@@ -34,11 +35,24 @@ const Container = styled.div`
   border-radius: 16px;
 `;
 
+const Line = styled.div`
+  position: relative;
+  width: 320px;
+  top: -156px;
+  height: 0px;
+  border: 0.1px solid #d7dedd;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 16px 0px;
+`;
+
 const Title = styled.h1`
   position: relative;
   width: 320px;
   height: 30px;
-  top: -8px;
+  top: 10px;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -56,8 +70,9 @@ const AvatarImg = styled.img`
   position: relative;
   width: 150px;
   height: 150px;
-  top: 10px;
+  top: 34px;
   border-radius: 100px;
+  object-fit: cover;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -72,7 +87,7 @@ const Info = styled.div`
   position: relative;
   width: 304px;
   height: 69px;
-  top: 17px;
+  top: 1px;
   border-radius: 16px;
   flex: none;
   order: 3;
@@ -91,9 +106,6 @@ const Username = styled.h1`
   line-height: 40px;
   text-align: center;
   color: #000000;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
   margin: 8px 0px;
 `;
 
@@ -102,16 +114,13 @@ const Contact = styled.h3`
   width: 252px;
   height: 17px;
   font-family: "Outfit";
-  top: -10px;
+  top: -4px;
   font-style: normal;
-  font-weight: 500;
   font-size: 14px;
   line-height: 18px;
   text-align: center;
   color: #000000;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
   margin: 8px 0px;
+  font-weight: 600;
 `;
 export default Card;

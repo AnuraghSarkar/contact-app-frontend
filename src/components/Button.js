@@ -19,9 +19,11 @@ const DeleteBtn = styled.button`
   background: #da4b26;
   text-align: center;
   color: white;
-  top: 5px;
+  top: -5px;
   border: none;
   border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
   flex: none;
   order: 4;
   flex-grow: 0;
